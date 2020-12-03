@@ -5,8 +5,7 @@ const profilepatientShema=mongoose.Schema({
     age:Number,
     sexe:String,
     weight:Number,
-    seriousillness:String
-
+ 
 })
 
 

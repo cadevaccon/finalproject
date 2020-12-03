@@ -1,4 +1,4 @@
-import { GET_PROFILE, GET_PROFILE_FAILURE, GET_PROFILE_SUCESS, LOGIN_FAILURE, LOGIN_SUCESS, LOGIN_USER, REGISTER_FAILURE, REGISTER_SUCESS, REGISTER_USER } from "../constants/actiontype";
+import { GET_PROFILE, GET_PROFILE_FAILURE, GET_PROFILE_SUCESS, LOGIN_FAILURE, LOGIN_SUCESS, LOGIN_USER, REGISTER_FAILURE, REGISTER_SUCESS, REGISTER_USER, USER_LOGOUT } from "../constants/actiontype";
 
 const initialState={
     loading:false,
@@ -23,10 +23,10 @@ const userReducer =(state = initialState,{type,payload})=>
             ...state,loading:true
     }
     case LOGIN_SUCESS:return {
-        ...state,loading:false,token:payload,errors:null
+        ...state,loading:false,token:payload,error:null
     }
     case LOGIN_FAILURE:return {
-        ...state,loading:false,errors:payload
+        ...state,loading:false,error:payload
     }
     case GET_PROFILE:return {
         ...state,loading:true
@@ -37,6 +37,10 @@ case GET_PROFILE_SUCESS:return {
 case GET_PROFILE_FAILURE:return {
     ...state,loading:false,errors:payload
 } 
+case USER_LOGOUT:return {
+    ...state,user:null
+}
+
         default:
             return state;
     }

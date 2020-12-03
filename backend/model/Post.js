@@ -7,7 +7,8 @@ const postShema=mongoose.Schema({
     begindate:Date,
     checked:Boolean,
     looked:Boolean,
-    doctor:String
+    doctor:String,
+    doctornote:String,
 })
 
 

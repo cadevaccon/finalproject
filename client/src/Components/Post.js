@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { getProfile, patientgetposts,patientinsertpost } from '../JS/actions'
 import Postcard from './Postcard'
+import Accordion from 'react-bootstrap/Accordion'
+import Button from 'react-bootstrap/Button'
+import Card from "react-bootstrap/Card"
+import './Postpatientcss.css'
 
 function Post() {
     const currentuser = useSelector(state => state.userReducer.user)
@@ -17,6 +21,7 @@ function Post() {
     
           
 },[])
+
 useEffect(() => {
     const timer = setTimeout(() => {
         dispatch(patientgetposts({"username":currentuser.username
@@ -34,17 +39,17 @@ useEffect(() => {
            
               dispatch(patientinsertpost({username:currentuser.username,syptome,seriousilness})) 
               dispatch(patientgetposts({"username":currentuser.username}))
+              setNewPost(!newPost)
   }
     return (
-        <>
+        <div className="container">
         {loading? <h1>Loading ...</h1>:      !currentuser?<Redirect to="/login"/>:
        
         <div>
+             <div style={{textAlign:"center",color:"#8064A2",fontSize:"25px"}}>{currentuser.username} </div>
             
-             <h2>{currentuser.username}</h2>
-             {post? <>{post.map(e=><Postcard posts={e}/>)}
-             </>:null}
-             <span onClick={newPoster}>NewPost</span>
+             
+              <span style={{textAlign:"center",fontSize:"22px",color:"#421c70"}} onClick={newPoster}>NewPost</span>
              {newPost?<>
             <input  type="textarea"
              name="syptome"
@@ -60,8 +65,19 @@ useEffect(() => {
              ></input>
              <button className="btn btn-primary" type="submit" onClick={insertnewpost}>Submit</button>
              </>:null}
+             <Accordion >
+             {post? <>{post.map((e,i)=><>  
+                
+  <Postcard posts={e} key={e._id}/>
+                
+            
+               
+             </>)}
+             </>:null}
+            </Accordion>
+           
         </div>}
-        </>
+        </div>
     )
 }
 

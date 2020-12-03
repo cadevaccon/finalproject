@@ -1,8 +1,9 @@
 const config=require('config');
-const Profile = require("../model/Profilepatient");
+const Profile = require("../model/Profiledoctor");
 const User=require('../model/User')
-exports.saveprofilepatient=async (req,res)=>{
-    const {username,age,sexe,weight,seriousillness} =req.body
+
+exports.saveprofiledoctor=async (req,res)=>{
+    const {username,verification,credential} =req.body
 
     try { {/*Searching for EXISTENSE */}
     //  need to search for the Account Existence
@@ -10,14 +11,10 @@ exports.saveprofilepatient=async (req,res)=>{
          if (!searchUserUsername) return res.status(401).json("Account Dosent Exist");
         const searchUsername=await Profile.findOne({username},{username:1})
         if (searchUsername) return res.status(401).json("Username Already Exist");
-        
         {/*Creating NEW Profile to insert into Client.Profiles */}
         const newProfile=new Profile({
-            username,age,sexe,weight,seriousillness,
-           
+            username,verification,credential,"verified":false,
         });
-        
-
         await newProfile.save()
         res.status(201).json(newProfile)
     } catch (error) {
@@ -39,15 +36,11 @@ try {
 }
 
 exports.updatemyprofile=async(req,res)=>{
-    const {username,age,weight,seriousillness,sexe} =req.body
+    const {username} =req.body
 try {   
-    var updater={};
-    age?updater={...updater,age}:updater=updater;
-    weight?updater={...updater,weight}:updater=updater;
-    seriousillness?updater={...updater,seriousillness}:updater=updater;
-    sexe?updater={...updater,sexe}:updater=updater;
+        var verif={verified:true}
     
-    const updated=await Profile.updateOne({username},{$set:updater})
+    const updated=await Profile.updateOne({username},{$set:verif})
     const user=await Profile.findOne({username})
         return res.status(201).json(user)
 } catch (error) {
@@ -56,5 +49,3 @@ try {
 }
 
 }
-
-

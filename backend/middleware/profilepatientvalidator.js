@@ -14,3 +14,14 @@ exports.validatorProfilepatient=(req,res,next)=>{
     errors.isEmpty()? next():res.status(400).json({errors:errors.array()})
 
 };
+exports.profilepatientgetprofile=()=>
+[
+    check('username','Insert a Username').notEmpty(),
+   
+];
+
+exports.profilepatientupdateprofile=()=>
+[
+    check('username','Insert a Username').notEmpty(),
+   
+];

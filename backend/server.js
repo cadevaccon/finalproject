@@ -5,6 +5,7 @@ const app=express()
 const user=require('./Routes/user');
 const profilepatient=require('./Routes/profilepatient')
 const postpatient=require('./Routes/postpatient')
+const profiledoctor=require('./Routes/profiledoctor')
 
 const PORT = process.env.PORT || 7000
 
@@ -19,3 +20,4 @@ app.use(express.json())
 app.use('/user',user)
 app.use('/profilepatient',profilepatient)
 app.use('/myposts',postpatient)
+app.use('/profiledoctor',profiledoctor)
