@@ -1,4 +1,4 @@
 {
-    "mongoURI":"mongodb://localhost:27017/client",
+    "mongoURI":"mongodb+srv://Ezzine:pqv8mHVfu92hfJt@cluster0.engfj.mongodb.net/client",
     "secretOrKey":"cadesecret"
 }
