@@ -40,8 +40,8 @@ useEffect(() => {
              
              <Accordion >
                  
-              {post?  post.length===0?<h4 style={{textAlign:"center",padding:"15px"}}>All Patient have been issued Notes {post.length} </h4>:
-              <>{post.map(e=><Postcard posts={e} key={e._id}/>)}
+              {post?  post.length===0?<h4 style={{textAlign:"center",padding:"15px"}}>All Patient have been issued Notes </h4>:
+              <>{post.map((e,i)=><Postcard posts={e,i} key={i}/>)}
               </>:null}   
             </Accordion>        
         </div>:<h4 style={{textAlign:"center",padding:"15px"}}>Wait for a Admin to verify your credentials</h4>}

@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Card from "react-bootstrap/Card"
 
 function Postcard(props) {
-    const {_id,syptome,seriousilness,username}=props.posts
+    const {_id,syptome,seriousilness,username,i}=props.posts
     const doctor = useSelector(state => state.userReducer.user)
     const loading2=useSelector(state=>state.postpatientReducer.loading)
     const [gettingProfile, setGettingProfile] = useState(false)
@@ -56,7 +56,7 @@ function Postcard(props) {
       <Card>
       <Card.Header>
         <Accordion.Toggle as={Button}  eventKey={_id} >
-          Post :{_id}    {toupdate?<div style={{backgroundColor:"#12d66a"}}>Updating</div>:null}
+          Post :{i}    {toupdate?<div style={{backgroundColor:"#12d66a"}}>Updating</div>:null}
                  
         </Accordion.Toggle>
       </Card.Header>

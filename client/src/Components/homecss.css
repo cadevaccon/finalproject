@@ -1,0 +1,24 @@
+
+
+a ,a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: rgb(84, 0, 122);
+
+}
+.linking{
+    padding-top: 150px;
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(84, 0, 122);
+    text-align: center;
+
+}
+
+.toabout{
+    font-size: 20px;
+  
+    color: rgb(53, 0, 114);
+    text-align: center;
+    text-transform: capitalize;
+}

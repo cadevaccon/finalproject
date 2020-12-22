@@ -61,7 +61,7 @@ else
         <> <div className="row">
         
                <div className="col-12 plop">
-               <h2 style={{color:"rgba(142, 43, 182, 0.774)"}} >Welcome {currentuser.username}</h2>
+               <h2 style={{ color: "#093603"}} >Welcome {currentuser.username}</h2>
                </div>
             </div>
             <div className="row">

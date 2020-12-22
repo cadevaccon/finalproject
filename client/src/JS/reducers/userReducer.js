@@ -4,6 +4,7 @@ const initialState={
     loading:false,
     user:null,
     errors:null
+    
 };
 
 const userReducer =(state = initialState,{type,payload})=> 
@@ -14,7 +15,7 @@ const userReducer =(state = initialState,{type,payload})=>
                 ...state,loading:true
         }
         case REGISTER_SUCESS:return {
-            ...state,loading:false,user:payload,errors:null
+            ...state,loading:false,user:payload,errors:null,register:true
         }
         case REGISTER_FAILURE:return {
           ...state,loading:false,errors:payload

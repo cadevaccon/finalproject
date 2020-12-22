@@ -17,7 +17,7 @@ function Navbar() {
         setLogout(true)
      }
     return (<>
-      <div style={{textAlign:"center",fontSize:"22px"}} >
+      <div style={{textAlign:"center",fontSize:"22px",backgroundColor:"#2aa74f"}} >
       <nav>
   <ul>
   <li><Link to="/" style={{textDecoration:"none", color: 'inherit' }}><span > Home</span></Link></li>
@@ -37,7 +37,7 @@ function Navbar() {
 
         }
    
-
+   <li><Link to="/aboutus" style={{textDecoration:"none", color: 'inherit' }}><span > About</span></Link></li>
   </ul>
 </nav>
 </div>

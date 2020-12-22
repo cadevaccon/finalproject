@@ -1,16 +1,17 @@
 body {
-    background: #f9f8fd;
+    background: #aaf0d1;
     font-family: "Lexend Exa", sans-serif;
 }
 nav {
     position:sticky;
+    background-color: #82d6a3; 
     top: 15px;
     text-align: center;
     display: inline-block;
-    border: 2px solid #ecebf1;
+    border: 2px solid #01500b;
     border-radius: 30px;
     animation: slide-in 1s ease-out;
-}
+} 
 ul {
     position: relative;
     display: flex;
@@ -57,10 +58,10 @@ ul li ul li Link {
     color: #2375d8;
 }
 ul li:hover {
-    background: #810881;
-    border: 2px solid #810881;
-    border-right: 2px solid #810881;
-    border-bottom: 2px solid #810881;
+    background: #088153;
+    border: 2px solid #088153;
+    border-right: 2px solid #088153;
+    border-bottom: 2px solid #088153;
 }
 ul li:hover {
     color: #f9f8fd;

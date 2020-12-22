@@ -17,14 +17,20 @@ function Register() {
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
   const [phonenumber, setPhoneNumber] = useState();
+  const registering = useSelector(state => state.userReducer.register)
   // to Check1
   // errors.onChange(errors.errors.filter(e=>e.param==="username"?setUsernameErr(e.msg):null))
-  
+    
   const addUser = (e) => {
     e.preventDefault();
     dispatch(register({ username, email, password, role, phonenumber }));
   
   };
+
+  if (registering)
+  {
+    <Redirect to="/login"></Redirect>
+  }
   return (
     <div className="get-in-touch">
       

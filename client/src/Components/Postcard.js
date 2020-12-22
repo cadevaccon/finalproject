@@ -9,7 +9,7 @@ import './profilecss.css'
 import notification from "./notification.jpg"
 
 function Postcard(props) {
-    const {_id,syptome,seriousilness,username,looked,checked,doctornote}=props.posts
+    const {_id,syptome,seriousilness,username,looked,checked,doctornote,i}=props.posts
    
     
     const [toupdate, setToupdate] = useState(false)
@@ -58,7 +58,7 @@ function Postcard(props) {
     <Card.Header>
       <Accordion.Toggle as={Button} variant="" eventKey={_id} >
           <div className="firstposttitel">
-        Post :{_id}   {looked&&!checked? 
+        Post :{i}   {looked&&!checked? 
                 <img src={notification} width="25px"  onClick=
                 {checking}/>:null}
                 {looked? <span style={{backgroundColor:"blueviolet",padding:"3px",color:"white"}}>Noted</span>:null}</div>

@@ -38,6 +38,7 @@ useEffect(() => {
         e.preventDefault(); 
            
               dispatch(patientinsertpost({username:currentuser.username,syptome,seriousilness})) 
+              
               dispatch(patientgetposts({"username":currentuser.username}))
               setNewPost(!newPost)
   }
@@ -65,10 +66,10 @@ useEffect(() => {
              ></input>
              <button className="btn btn-primary" type="submit" onClick={insertnewpost}>Submit</button>
              </>:null}
-             <Accordion >
+             <Accordion>
              {post? <>{post.map((e,i)=><>  
                 
-  <Postcard posts={e} key={e._id}/>
+  <Postcard posts={e,i} key={e._id}/>
                 
             
                
