@@ -7,7 +7,7 @@
     "server": "cd backend && npm run dev",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start":"cd backend && node server.js && cd .. && cd client &&  start"
+    "start":"cd backend && node server.js && cd .. && cd client &&  run start"
   },
   "author": "",
   "license": "ISC",
