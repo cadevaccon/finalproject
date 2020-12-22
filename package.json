@@ -6,7 +6,8 @@
   "scripts": {
     "server": "cd backend && npm run dev",
     "client": "cd client && npm start",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start":"cd backend && node server.js && cd .. && cd client &&  start"
   },
   "author": "",
   "license": "ISC",
