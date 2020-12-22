@@ -9,6 +9,8 @@ const profiledoctor=require('./Routes/profiledoctor')
 
 const PORT = process.env.PORT || 7000
 
+NODE_ENV=production
+
 app.listen(PORT ,(err)=>err? console.log(err):console.log(`Server is Running on ${PORT}`));
 
 const connectdb=require(`./config/dbConnect`);
