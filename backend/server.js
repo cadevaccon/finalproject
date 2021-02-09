@@ -7,7 +7,7 @@ const profilepatient=require('./Routes/profilepatient')
 const postpatient=require('./Routes/postpatient')
 const profiledoctor=require('./Routes/profiledoctor')
 
-const PORT = process.env.PORT || 7000
+const PORT = 7000
 
 
 
